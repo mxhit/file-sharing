@@ -1,0 +1,108 @@
+1.general
+
+mfbroka.com includes its sister-company MoneyFounder Advisory (mfadtech.com) under its website .so mfbroka.com ("the Company" or "mfbroka.com" or "we") 
+is the owner of this application. .It’sTM© is committed to protecting your privacy and we understand you want to keep your information private, safe and 
+discrete. This Privacy Policy is designed to help you decide whether to use the Service and in what manner, and it describes how we collect, store and 
+use information on individuals who use the Service.
+
+2.information that we collect
+
+
+Users can download this app as free and use our free service without identifying themselves or volunteering personal information. 
+But to otherwise utilize the Services and associated features, a user must first register with our application. When a user registers, we may request certain 
+personal information, including, but not limited to, contact information, such as the users name , full name ,  mobile number, e-mail address, 
+location information like addressline and country-state-city , and demographic information such as age and gender.
+ Please use your discretion when providing sensitive information 
+ to our app, and under any circumstances.
+
+By registering and/or submitting personal information to this application , you consent to moneyfounder use of this information for its 
+legitimate business purposes and consent to the transfer and storage of such information to and 
+in moneyfounder's databases in accordance with this Privacy Statement. Your personal information is not used for other purposes, 
+unless we obtain your permission, or unless otherwise required or permitted by law or professional standards.
+
+The app does use third party services that may collect information used to identify you.
+Link to privacy policy of third party service providers used by the app
+https://policies.google.com/privacy
+
+3. Purposes of Data Collection and security
+
+application use user data to identify user and provide better exoeriance with services. we collect device information also for 
+provide decent look of the application . for quick service in chat we are using websocket connection with our server.
+but total connection with our server is secure and protected with token system. 
+we uses technical, organizational, and administrative security measures to protect information we hold in our records from loss, misuse, and unauthorized access.
+  Unfortunately, no company can guarantee full security. Users must prevent unauthorized access to their account by selecting and protecting their password
+  and limiting access to their computer or device and browser.
+
+
+This all information provides us with aggregate data that application may use to improve the Services only.
+
+We may also use the information you send to us to communicate with you via email, and possibly other means, regarding products, services, 
+offers, promotions, or events we think may be of interest to you or to send you our newsletter, if this is in accordance with your marketing 
+preferences.  You will always be able to opt-out of such communications at any time.
+
+Some features of the Services may be offered in conjunction with an unaffiliated third party, such as another entity or brokerage offering the Services 
+and contracting with us as a vendor to provide the Services to users. In order to provide the Services, it may be necessary for either users 
+or app to share personal information of users with unaffiliated third parties. If a user does not want his or her information to be shared,
+ the user can choose not to allow the transfer by not using the Services.
+ 
+ 
+ 
+4. we are not using cookies and advertise in this application.
+
+5. User Options — Opt-Out
+
+Users of the Services should contact us at the address below with any questions about the information that we collect from users.
+ Users may opt out of receiving any future direct marketing or promotional electronic mailings from moneyfounder by following the 
+ unsubscribe procedures indicated in the mailing. Additionally, if a user does not want his or her information to be shared, 
+ or does not wish to receive telephone solicitations, users may opt out of the sharing or solicitations by  emailing us at info@moneyfounder.com, 
+ indicating that he or she wishes to opt out. Users will still receive non-promotional communications such as service-related emails.
+ 
+ 6. User Access to Information
+
+application acknowledges the individual’s right to access their personal data. application offers users the ability to edit, correct, change, delete,
+ or transfer the information and data collected during registration or exercise any other subject right available to users under the 
+ EU General Data Protection Regulation. Users may access this information at any time and as often as necessary by choosing the “My Profile” option 
+ or other similar functionality offered in the Services. To access or change your personal information, log in to your account through 
+ the Services.
+ 
+ 
+ 7. Security
+
+All user personal information is stored on servers at a location designed specifically to ensure that no unauthorized individuals have access to the 
+server or its data. We also have appropriate managerial procedures in place to safeguard the information we collect.
+
+
+8. User Consent
+
+By using the Services, users signify their assent to this privacy policy and to the collection, use and dissemination of their personal information 
+and data, including to third parties, as described , and for the purposes described . app may transfer personal data outside the 
+user’s region for certain situations, such as when necessary to perform services provided by moneyfounder, for pre-contractual steps or in a user’s 
+interest, or for other legitimate business interests that are not overridden by the user’s interests.  By registering for this app services, a 
+user authorizes moneyfounder to transfer their personal data outside the user’s region.  If a user does not agree to this policy, or to the collection, 
+use and dissemination of their personal information and data, including to third parties, as described , and for the purposes described , 
+he or she should not use the Services, or follow the opt-out procedures identified as above.
+
+9.Children’s Privacy
+These Services do not address anyone under the age of 18. we do not knowingly collect personally identifiable information from children under 18. 
+In the case we discover that a child under 18 has provided us with personal information, we immediately delete this from our servers.
+ If you are a parent or guardian and you are aware that your child has provided us with personal information, 
+ please contact us so that we will be able to do necessary actions.
+
+
+10.Changes to This Privacy Policy
+I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. 
+I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
+
+11. Contact Us
+
+The information provided is intended to be transparent, concise, and understandable. If you have any questions or complaints regarding this policy, 
+please contact us on info@moneyfounder.com
+
+
+
+
+ 
+ 
+
+
+

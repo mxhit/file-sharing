@@ -1,0 +1,520 @@
+Contabo Server Details
+
+Customer ID 336918
+
+https://my.contabo.com
+user name : tiwari92devesh@gmail.com
+password : vAUuU8RjPbg3
+
+
+Your VPS
+IP address :164.68.113.198
+Server type : VPS L SSD
+VNC IP and port : 164.68.100.205:63026
+VNC password ; NHMGqT6a
+user name : root
+password : HK4Ger85kA8QA
+operating system : Cent OS 7 (64 Bit)
+
+
+
+Your IPv6 subnet:
+Each dedicated server and each VPS comes with a /64 IPv6 subnet in addition to its IPv4 address. You can use the addresses of such a subnet freely on the associated server/VPS. IPv6 is already preconfigured on our servers but has to be activated explicitly in some cases. You can find out how to activate IPv6 and further information on the subject in our tutorial.
+
+subscription : VPS L SSD
+IPv4 address : 	164.68.113.198
+IPv6 subnet : 2a02:c207:2028:7940:0000:0000:0000:0001 / 64
+
+
+===================================VPS WHM Details=================================================
+https://164.68.113.198:2087 - WHM
+username - root
+password - vAUuU8RjPbg3
+
+https://164.68.113.198:2096 - webmail
+https://164.68.113.198:2083 - cpanel
+
+======================================Cpanel Details===========================================
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: moneyfounder.com
+| Ip: 164.68.113.198 
+| HasCgi: y
+| UserName: moneyfounder
+| PassWord: lnv3gq+iGUHh
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: 
+| Package: default
+| Feature List: default
+| Language: en
++===================================+
+
+email : admin@moneyfounder.com
+pass :admin@moneyfounder.com
+
+email : administrator@moneyfounder.com
+pass :administrator@moneyfounder.com
+
+email : arun.singh@moneyfounder.com
+pass : arun.singh@moneyfounder.com
+
+email : divyeshdesai@@moneyfounder.com
+pass :divyeshdesai@@moneyfounder.com
+
+email : faruk@moneyfounder.com
+pass :faruk@moneyfounder.com
+
+email :  info@moneyfounder.com
+pass : info@moneyfounder.com
+
+email : jayendra@moneyfounder.com
+pass : jayendra@moneyfounder.com
+
+email : keyur@moneyfounder.com
+pass : keyur@moneyfounder.com
+
+email : nawaz@moneyfounder.com
+pass : nawaz@moneyfounder.com
+ 
+email : pinakin@moneyfounder.com
+pass : pinakin@moneyfounder.com
+
+email : rajesh@moneyfounder.com
+pass : rajesh@moneyfounder.com
+ 
+email : shoeb@moneyfounder.com
+pass : shoeb@moneyfounder.com
+
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: crazicave.co.in
+| Ip: 164.68.113.198
+| HasCgi: y
+| UserName: crazicaveco
+| PassWord: KKH7rA]MEHrt
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: 
+| Package: default
+| Feature List: default
+| Language: en
+
+--- mysql DB ----
+host: 164.68.113.198:3306
+User: crazicaveco_dev
+PassWord: Crazicave@123
++===================================+
+
+Orgaveda 
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: orgaveda.com
+| Ip: 164.68.113.198 (n)
+| HasCgi: y
+| UserName: orgaveda
+| PassWord: KKH7rA]MEHrt
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: rashmi.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
++===================================+
+ 
+mail : admin@orgaveda.com
+pas : admin@orgaveda.com
+
+mail : info@orgaveda.com
+pas : Info@orgaveda1.
+
+
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: crazicave.co.uk
+| Ip: 164.68.113.198 
+| HasCgi: y
+| UserName: crazicave
+| PassWord: 90w3%=9&0.w$
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: navneet.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
+
+--- mysql DB ----
+host: 164.68.113.198:3306
+User: crazicave_ukdb
+PassWord: Crazicave@123
+
+
+email : admin@crazicave.co.uk
+pass : admin@crazicave.co.uk
++===================================+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: cartmantra.com
+| Ip: 164.68.113.198 (n)
+| HasCgi: y
+| UserName: cartmantra
+| PassWord: ODeuuI]SlMQW
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
++===================================+
+Email : chetankumar@cartmantra.com
+Pass : chetankumar
+
+mail : info@cartmantra.com
+pas : info@cartmantra.com
+
+mail :  test@cartmantra.com
+pass : test@cartmantra.com
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: daddyscode.com/cpanel
+| Ip: 164.68.113.198 (n)
+| HasCgi: y
+| UserName: daddyscode
+| PassWord: 8.Rfz[5z29+H
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
+
+mail : admin@daddyscode.com
+p : admin@daddyscode.com
+
+mail : alpesh@daddyscode.com
+p : alpesh@daddyscode.com
+
+mail : ashish@daddyscode.com
+p : ashish@daddyscode.com
+
+mail : dev@daddyscode.com
+p: dev@daddyscode.com
+
+mail : hr@daddyscode.com
+p : hr@daddyscode.com
+
+mail  : info@daddyscode.com
+p : info@daddyscode.com
+
+mail : kuldeep.mahobia@daddyscode.com
+p : kuldeep.mahobia@daddyscode.com
+
+mail : prasad@daddyscode.com
+p :  prasad@daddyscode.com
+
+mail : sonali@daddyscode.com
+p : sonali@daddyscode.com
+
+mail : support@daddyscode.com
+p : support@daddyscode.com
+
++===================================+
+...Done
+
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: daddyscode.uk
+| Ip: 164.68.113.198 (n)
+| HasCgi: y
+| UserName: daddyscodeuk
+| PassWord: b_n$&lIBtCSH
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
++===================================+
+...Done.
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: b2bshoppy.com/cpanel
+| Ip: 164.68.113.198 (n)
+| HasCgi: y
+| UserName: b2bshoppy
+| PassWord: &5e$=s-=1JA8
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
++===================================+
+...Done
+
+Email : admin@b2bshoppy.com
+pass : admin@b2bshoppy.com
+
+mail : info@b2bshoppy.com
+pass : info@b2bshoppy
+
+mail : kuldeep.mahobia@b2bshoppy.com
+pass : kuldeep.mahobia
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: crazicave.com
+| Ip: 164.68.113.198 (n)
+| HasCgi: y
+| UserName: crazicavecom
+| PassWord: hguNW=aDE(vu
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
+
+mail : info@crazicave.com
+p : info@crazicave.com
++===================================+
+...Done
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: workwithdaddy.com
+| Ip: 164.68.113.198 
+| HasCgi: y
+| UserName: work
+| PassWord: QMzYUb;k4H$G
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
++===================================+
+
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: shukul.com
+| Ip: 164.68.113.198 
+| HasCgi: y
+| UserName: shukul
+| PassWord: QMzYUb;k4H$G
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
+
+
+mail : info@shukul.com
+P L: info@shukul.com
++===================================+
+
+WWWAcct 12.6.0 (c) 2019 cPanel, L.L.C....
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: shukulgroup.com
+| Ip: 164.68.113.198 (n)
+| HasCgi: y
+| UserName: shukulgroup
+| PassWord: 2)(49G;JLkD^
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
+
+mail : info@shukulgroup.com
+p : info@shukulgroup.com
++===================================+
+...Done
+
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: shukulshowbiz.com
+| Ip: 164.68.113.198 (n)
+| HasCgi: y
+| UserName: shukulshowbiz
+| PassWord: .E{Na{F[mI}0
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
++===================================+
+...Done
+
+mail : 	admin@shukulshowbiz.com
+p : 	admin@shukulshowbiz.com
+
+mail : contact@shukulshowbiz.com
+p : contact@shukulshowbiz.com
+
+mail : dhananjay@shukulshowbiz
+p : dhananjay@shukulshowbiz
+
+mail : info@shukulshowbiz.com
+p : info@shukulshowbiz.com
+
+mail : manthanpurohit@shukulshowbiz.com
+pa : manthanpurohit@shukulshowbiz.com
+
+mail : sagar.jogi@shukulshowbiz.com
+p : sagar.jogi@shukulshowbiz.com
+
+mial : sejalpartiwala@shukulshowbiz.com
+pas : sejalpartiwala@shukulshowbiz.com
+
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: theglorykart.com
+| Ip: 164.68.113.198 (n)
+| HasCgi: y
+| UserName: theglorykart
+| PassWord: Co#RIKWn[GuF
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
++===================================+
+...Done
+
+
+Hong Kong Jewellry & Gem Fair
+16-20 September 2019 | AsiaWorld-Expo.Hong Kong
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: mfadtech.com
+| Ip: 164.68.113.198 
+| HasCgi: y
+| UserName: mfadtech
+| PassWord: P]]8ah2mGm2[
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.contabo.net
+| NameServer2: ns2.contabo.net
+| NameServer3: ns3.contabo.net
+| NameServer4: 
+| Contact Email: alpesh.daddyscode@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
++===================================+
