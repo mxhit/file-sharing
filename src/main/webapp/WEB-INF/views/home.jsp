@@ -5,7 +5,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>File Share</title>
+        <title>File Share | Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
         <link rel="icon" type="image/png" href="resources/images/favicon.ico"/>

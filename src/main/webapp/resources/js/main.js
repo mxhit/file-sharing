@@ -88,8 +88,10 @@
 /*==================================================================
 [ searchable dropdown ]*/
 
-function myFunction() {
+function searchFunction(e) {
 	document.getElementById("myDropdown").classList.toggle("show");
+//	$('#myDropdown').show();
+	e.preventDefault();
 }
 
 function filterFunction() {

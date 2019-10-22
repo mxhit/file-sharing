@@ -101,22 +101,15 @@
 				<div class="modal-content">
 					<div class="modal-body">
 					
-						<form action="./sharefile" method="get" class="sharefile-form">
+						<form action="./sharefile" method="post" class="sharefile-form">
 						
-							<!-- searchable dropdown start-->
-						 		<div class="searchable-dropdown">
-						  			<button onclick="myF
-						  			unction()" class="search-dropbtn">Users</button>
-								  	<div id="myDropdown" class="searchable-dropdown-content">
-									    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunctaion()">
-									    <c:forEach var="k" items="${users}">
-									    	<a onclick="sendUserId(${k.getId()})">${k.getUsername()}</a>
-									    </c:forEach>
-								  	</div>
-								</div>			
-							<!-- searchable dropdown end -->
+							<input list="users" name="users" class="users" placeholder="select a user">
+							<datalist id="users">
+								<c:forEach var="k" items="${users}">
+									<option value="${k.getId()}">${k.getUsername()}</option>
+								</c:forEach>
+							</datalist>
 
-							<input type="hidden" name="shareduserid" id="shareduserid">
 							<input type="hidden" name="sharefileid" id="sharefileid">
 							<button type="button" class="share-file-btn" onclick="shareFile()">Share</button>
 						</form>
@@ -138,34 +131,20 @@
 			<c:forEach var="j" items="${files}">
 				<tr>
 					<!-- file icon -->
-					<td>
-						<img src="resources/images/icons/${j.getIcon()}" class="file-icon" id="file-icon">
-					</td>
+					<td><img src="resources/images/icons/${j.getIcon()}" class="file-icon" id="file-icon"></td>
 					
 					<!-- file -->
-					<td>
-						<a href="resources/files/${j.getFilename()}" target="_blank" rel="noopener noreferrer">${j.getFile()}</a>
-					</td>
+					<td><a href="resources/files/${j.getFilename()}" target="_blank" rel="noopener noreferrer">${j.getFile()}</a></td>
 					
 					<!-- last modified date -->
 					<td>${j.getLastmodified()}</td>
 					
 					<!-- actions -->
 					<td>
-						<a onclick="renameFileModal(${j.getFileid()})" class="rename">
-							<img src="resources/images/icons/rename.svg" class="rename-icon">
-						</a>
-						
-						<a onclick="deleteFileModal(${j.getFileid()})" class="delete">
-							<img src="resources/images/icons/delete.svg" class="delete-icon">
-						</a>
-						
-			 			<a href="" class="download" download="${j.getFilename()}"> 
-			 				<img src="resources/images/icons/download.svg" class="download-icon">
-		 				</a>
-		 				<a onclick="shareFileModal(${j.getFileid()})" class="share">
-		 					<img src="resources/images/icons/share.svg" class="share-icon">
-		 				</a>
+						<a onclick="renameFileModal(${j.getFileid()})" class="rename"><img src="resources/images/icons/rename.svg" class="rename-icon"></a>
+						<a onclick="deleteFileModal(${j.getFileid()})" class="delete"><img src="resources/images/icons/delete.svg" class="delete-icon"></a>
+			 			<a href="" class="download" download="${j.getFilename()}"> <img src="resources/images/icons/download.svg" class="download-icon"></a>
+		 				<a onclick="shareFileModal(${j.getFileid()})" class="share"><img src="resources/images/icons/share.svg" class="share-icon"></a>
 					</td>
 				</tr>			
 			</c:forEach>

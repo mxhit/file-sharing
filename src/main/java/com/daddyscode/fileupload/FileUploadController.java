@@ -227,19 +227,23 @@ public class FileUploadController {
 		return new ModelAndView("redirect:/folder?folderid=" + folderid);
 	}
 	
-	@RequestMapping(value = "sharefile")
-	public ModelAndView shareFile(HttpServletRequest request, @RequestParam("sharefileid") int fileid,
-			@RequestParam("shareduserid") int shareduserid) {
+	@RequestMapping(value = "sharefile", method = RequestMethod.POST)
+	public ModelAndView shareFile(HttpServletRequest request) {
 		int folderid = 0;
+		
+		String fileid = request.getParameter("sharefileid");
+		String shareduserid = request.getParameter("shareduserid");
 		
 		folderid = (Integer) request.getSession().getAttribute("folderid");
 		
-		FileSharingDao fileShare = new FileSharingDao();
+		System.out.println("shareduserid: " + shareduserid);
+		
+		/*FileSharingDao fileShare = new FileSharingDao();
 		try {
-			fileShare.shareFile(shareduserid, shareduserid);
+			fileShare.shareFile(fileid, shareduserid);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 		
 		return new ModelAndView("redirect:/folder?folderid=" + folderid);
 	}
