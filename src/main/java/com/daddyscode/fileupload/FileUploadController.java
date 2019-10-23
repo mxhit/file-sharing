@@ -29,22 +29,34 @@ public class FileUploadController {
 	@Autowired
 	ServletContext servletContext;
 	
-	@RequestMapping(value = "/register")
+	/*@RequestMapping(value = {"/", "/register"}, method = RequestMethod.GET)
+	public String register() {
+		System.out.println("inside get method");
+		
+		return "register";
+	}*/
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String register(@RequestParam("fullname") String fullname, @RequestParam("email") String email,
 			@RequestParam("username") String username, @RequestParam("password") String password) {
 		boolean isRegistered = false;
 		
+		System.out.println("inside post method");
+		
 		FileSharingDao fileShare = new FileSharingDao();
 		
 		try {
+			System.out.println("inside try block");
 			isRegistered = fileShare.registerUser(username, password, fullname, email);
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		
 		if (isRegistered) {
+			System.out.println(isRegistered);
 			return "redirect:/login";
 		} else {
+			System.out.println(isRegistered);
 			return "register";
 		}
 	}

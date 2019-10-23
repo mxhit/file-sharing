@@ -56,6 +56,9 @@
 				</div>
 			</div>
 		</div>
+		<div>
+			<a href="">Don't have an account? Register here</a>
+		</div>
 	
 	<!--===============================================================================================-->
 		<script src="resources/vendor/jquery/jquery-3.2.1.min.js"></script>

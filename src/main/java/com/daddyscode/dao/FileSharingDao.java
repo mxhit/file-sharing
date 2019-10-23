@@ -40,11 +40,13 @@ public class FileSharingDao extends CloseConnection implements Queries {
 
 	// ****************************** USER ******************************	
 	public boolean registerUser(String username, String password, String fullname, String email) throws ClassNotFoundException, SQLException {
+		System.out.println("registerUser start");
+		
 		PreparedStatement preparedStatement = DatabaseConnection.getDatabase().getConnection().prepareStatement(ADD_USER_QUERY);
 		preparedStatement.setString(1, username);
 		preparedStatement.setString(2, password);
 		preparedStatement.setString(3, fullname);
-		preparedStatement.setString(4, password);
+		preparedStatement.setString(4, email);
 		
 		ResultSet resultSet = preparedStatement.executeQuery();
 		
@@ -53,6 +55,8 @@ public class FileSharingDao extends CloseConnection implements Queries {
 			
 			return true;
 		}
+		
+		System.out.println("registerUser end");
 		
 		return false;
 	}
