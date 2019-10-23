@@ -16,3 +16,5 @@ A Spring Boot web app for uploading and downloading files
 
 **Functionality to be added:**
   - *Cache control*
+  - *Multiple file sharing*
+  - *Managing upload size*
