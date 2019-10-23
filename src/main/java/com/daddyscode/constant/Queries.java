@@ -13,6 +13,7 @@ public interface Queries {
 	static final String GET_USERS_QUERY = "SELECT * FROM FSuser";
 	
 	// ****************************** INSERT ******************************	
+	static final String ADD_USER_QUERY = "INSERT INTO FSuser (username, password, fullname, email) VALUES (?, ?, ?, ?)";
 	static final String ADD_FOLDER_QUERY = "INSERT INTO FSfolder (foldername, createddate, folder, userid) VALUES (?, ?, ?, ?)";
 	static final String ADD_FILES_QUERY = "INSERT INTO FSfile (folderid, filename, createddate, file, lastmodified, userid) VALUES (?, ?, ?, ?, ?, ?)";
 	static final String ADD_SHARE_INFO_QUERY = "INSERT INTO FSshare (fileid, sharedwith) VALUES (?, ?)";

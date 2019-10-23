@@ -12,7 +12,7 @@ import java.util.Date;
 import com.daddyscode.constant.Queries;
 import com.daddyscode.dto.Files;
 import com.daddyscode.dto.Folder;
-import com.daddyscode.dto.Login;
+import com.daddyscode.dto.Users;
 import com.daddyscode.utility.DatabaseConnection;
 import com.daddyscode.utility.CloseConnection;
 
@@ -21,7 +21,7 @@ public class FileSharingDao extends CloseConnection implements Queries {
 	
 	
 	// ****************************** AUTHENTICATION ******************************	
-	public boolean getAuthentication(Login login) throws ClassNotFoundException, SQLException {
+	public boolean getAuthentication(Users login) throws ClassNotFoundException, SQLException {
 			PreparedStatement preparedStatement = DatabaseConnection.getDatabase().getConnection()
 					.prepareStatement(AUTHENTICATION_QUERY);
 			preparedStatement.setString(1, login.getUsername());
@@ -39,6 +39,24 @@ public class FileSharingDao extends CloseConnection implements Queries {
 	}
 
 	// ****************************** USER ******************************	
+	public boolean registerUser(String username, String password, String fullname, String email) throws ClassNotFoundException, SQLException {
+		PreparedStatement preparedStatement = DatabaseConnection.getDatabase().getConnection().prepareStatement(ADD_USER_QUERY);
+		preparedStatement.setString(1, username);
+		preparedStatement.setString(2, password);
+		preparedStatement.setString(3, fullname);
+		preparedStatement.setString(4, password);
+		
+		ResultSet resultSet = preparedStatement.executeQuery();
+		
+		if (resultSet.next()) {
+			close(preparedStatement, resultSet);
+			
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public int getUser(String username) throws ClassNotFoundException, SQLException {
 		int userid = 0;
 		
@@ -56,19 +74,21 @@ public class FileSharingDao extends CloseConnection implements Queries {
 		return userid;
 	}
 	
-	public ArrayList<Login> getUsers() throws ClassNotFoundException, SQLException {
-		ArrayList<Login> usersList = new ArrayList<Login>();
+	public ArrayList<Users> getUsers() throws ClassNotFoundException, SQLException {
+		ArrayList<Users> usersList = new ArrayList<Users>();
 		
 		PreparedStatement preparedStatement = DatabaseConnection.getDatabase().getConnection().prepareStatement(GET_USERS_QUERY);
 		ResultSet resultSet = preparedStatement.executeQuery();
 		
 		while (resultSet.next()) {
-			Login login = new Login();
-			login.setId(resultSet.getInt("id"));
-			login.setUsername(resultSet.getString("username"));
-			login.setPassword(resultSet.getString("password"));
+			Users users = new Users();
+			users.setId(resultSet.getInt("id"));
+			users.setUsername(resultSet.getString("username"));
+			users.setPassword(resultSet.getString("password"));
+			users.setFullname(resultSet.getString("fullname"));
+			users.setEmail(resultSet.getString("email"));
 			
-			usersList.add(login);
+			usersList.add(users);
 		}
 		
 		close(preparedStatement, resultSet);
@@ -239,10 +259,10 @@ public class FileSharingDao extends CloseConnection implements Queries {
 		close(preparedStatement);
 	}
 	
-	public void shareFile(int sharefileid, int shareduserid) throws ClassNotFoundException, SQLException {
+	public void shareFile(int sharefileid, String sharedusername) throws ClassNotFoundException, SQLException {
 		PreparedStatement preparedStatement = DatabaseConnection.getDatabase().getConnection().prepareStatement(ADD_SHARE_INFO_QUERY);
 		preparedStatement.setInt(1, sharefileid);
-		preparedStatement.setInt(2, shareduserid);
+		preparedStatement.setString(2, sharedusername);
 		preparedStatement.executeUpdate();
 		
 		close(preparedStatement);

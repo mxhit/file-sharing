@@ -22,12 +22,32 @@ import org.springframework.web.servlet.ModelAndView;
 import com.daddyscode.dao.FileSharingDao;
 import com.daddyscode.dto.Files;
 import com.daddyscode.dto.Folder;
-import com.daddyscode.dto.Login;
+import com.daddyscode.dto.Users;
 
 @Controller
 public class FileUploadController {
 	@Autowired
 	ServletContext servletContext;
+	
+	@RequestMapping(value = "/register")
+	public String register(@RequestParam("fullname") String fullname, @RequestParam("email") String email,
+			@RequestParam("username") String username, @RequestParam("password") String password) {
+		boolean isRegistered = false;
+		
+		FileSharingDao fileShare = new FileSharingDao();
+		
+		try {
+			isRegistered = fileShare.registerUser(username, password, fullname, email);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		if (isRegistered) {
+			return "redirect:/login";
+		} else {
+			return "register";
+		}
+	}
 	
 	@RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
 	public String login(HttpServletRequest request) {
@@ -45,7 +65,7 @@ public class FileUploadController {
 		String username;
 		int userid = 0;
 		
-		Login login = new Login();
+		Users login = new Users();
 		login.setUsername(data.get("username"));
 		login.setPassword(data.get("password"));
 		
@@ -93,7 +113,7 @@ public class FileUploadController {
 		request.getSession().setAttribute("folderid", folderid);
 		
 		ArrayList<Files> files;
-		ArrayList<Login> users;
+		ArrayList<Users> users;
 		
 		FileSharingDao fileShare = new FileSharingDao();
 		try {
@@ -228,22 +248,21 @@ public class FileUploadController {
 	}
 	
 	@RequestMapping(value = "sharefile", method = RequestMethod.POST)
-	public ModelAndView shareFile(HttpServletRequest request) {
+	public ModelAndView shareFile(HttpServletRequest request, @RequestParam("sharedusername") String sharedusername) {
 		int folderid = 0;
 		
-		String fileid = request.getParameter("sharefileid");
-		String shareduserid = request.getParameter("shareduserid");
+		int fileid = Integer.parseInt(request.getParameter("sharefileid"));
 		
 		folderid = (Integer) request.getSession().getAttribute("folderid");
 		
-		System.out.println("shareduserid: " + shareduserid);
+		System.out.println("shareduserid: " + sharedusername);
 		
-		/*FileSharingDao fileShare = new FileSharingDao();
+		FileSharingDao fileShare = new FileSharingDao();
 		try {
-			fileShare.shareFile(fileid, shareduserid);
+			fileShare.shareFile(fileid, sharedusername);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}*/
+		}
 		
 		return new ModelAndView("redirect:/folder?folderid=" + folderid);
 	}

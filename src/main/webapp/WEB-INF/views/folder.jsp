@@ -103,10 +103,10 @@
 					
 						<form action="./sharefile" method="post" class="sharefile-form">
 						
-							<input list="users" name="users" class="users" placeholder="select a user">
+							<input list="users" name="sharedusername" class="sharedusername" placeholder="Select a user" autocomplete="off">
 							<datalist id="users">
 								<c:forEach var="k" items="${users}">
-									<option value="${k.getId()}">${k.getUsername()}</option>
+									<option value="${k.getFullname()}">${k.getFullname()}</option>
 								</c:forEach>
 							</datalist>
 
