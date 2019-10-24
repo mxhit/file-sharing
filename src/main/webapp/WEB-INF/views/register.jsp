@@ -34,9 +34,9 @@
 			<div class="container-login100" style="background-color: white;">
 				<div class="wrap-login100 p-t-30 p-b-50">
 					<span class="login100-form-title p-b-41">
-						Sign Up
+						<a href="./login">Already have an account, Sign in</a>
 					</span>
-					<form action="./login" method="POST" class="login100-form validate-form p-b-33 p-t-5">
+					<form action="./register" method="POST" class="login100-form validate-form p-b-33 p-t-5">
 						<!-- Full Name -->
 						<div class="wrap-input100 validate-input" data-validate = "Enter fullname">
 							<input class="input100" type="text" name="fullname" placeholder="Fullname" autocomplete="off">
@@ -63,8 +63,8 @@
 	
 						<!-- Login button -->
 						<div class="container-login100-form-btn m-t-32">
-							<button class="login100-form-btn" onclick="login()">
-								Login
+							<button class="login100-form-btn" onclick="register()">
+								Register
 							</button>
 						</div>
 					</form>

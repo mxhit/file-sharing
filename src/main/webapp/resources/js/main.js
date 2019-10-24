@@ -158,6 +158,10 @@ function login() {
 	document.forms[0].submit();
 }
 
+function register() {
+	document.forms[0].submit();
+}
+
 function addFolder() {
 	document.forms[0].submit();
 }

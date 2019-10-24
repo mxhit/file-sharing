@@ -223,7 +223,7 @@ iframe {
   color: #000; /* changed title font from white to black */
   line-height: 1.2;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
 
   display: block;
 }
@@ -922,4 +922,12 @@ th, td {
 .sharedusername {
 	padding: 10px;
 	text-align: center;
+}
+
+/*------------------------------------------------------------------
+[ register link on login page ]*/
+
+.registration-link {
+	text-align: center;
+	background: #ECECEC;
 }
