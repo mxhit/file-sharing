@@ -868,6 +868,10 @@ th, td {
 	padding: 10px;
 }
 
+#file-col {
+	text-align: justify;
+}
+
 .rename, .download, .delete, .share {
 	cursor: pointer;
 }

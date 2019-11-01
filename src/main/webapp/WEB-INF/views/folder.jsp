@@ -122,19 +122,18 @@
 		<!-- grid -->
 		<table class="list-view">
 			<tr>
-				<th></th>
-				<th>File</th>
+				<th id="file-col">Your Files</th>
 				<th>Last Modified</th>
 				<th>Actions</th>
 			</tr>
 			
 			<c:forEach var="j" items="${files}">
 				<tr>
-					<!-- file icon -->
-					<td><img src="resources/images/icons/${j.getIcon()}" class="file-icon" id="file-icon"></td>
-					
 					<!-- file -->
-					<td><a href="resources/files/${j.getFilename()}" target="_blank" rel="noopener noreferrer">${j.getFile()}</a></td>
+					<td id="file-col">
+						<img src="resources/images/icons/${j.getIcon()}" class="file-icon" id="file-icon" style="margin: 0px 10px">
+						<a href="resources/files/${j.getFilename()}" target="_blank" rel="noopener noreferrer">${j.getFile()}</a>
+					</td>
 					
 					<!-- last modified date -->
 					<td>${j.getLastmodified()}</td>

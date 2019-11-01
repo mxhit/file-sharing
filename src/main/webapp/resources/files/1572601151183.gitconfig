@@ -1,0 +1,14 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Mohit Dodhia
+	email = 52273756+mohit-daddyscode@users.noreply.github.com
+[filesystem "Oracle Corporation|1.8.0_211|-1466780766"]
+	timestampResolution = 1001 microseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Oracle Corporation|1.8.0_211|-796384854"]
+	timestampResolution = 3001 microseconds
+	minRacyThreshold = 0 nanoseconds

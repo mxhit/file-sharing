@@ -190,7 +190,7 @@ public class FileUploadController {
 	
 	@RequestMapping(value = "/fileupload", method = RequestMethod.POST)
 	public ModelAndView fileUpload(HttpServletRequest request, @RequestParam("file") MultipartFile file) {
-		final String UPLOAD_DIRECTORY = "D:\\Java\\eclipse-workspace\\file-share\\src\\main\\webapp\\resources\\files\\";
+		final String UPLOAD_DIRECTORY = "E:\\Java\\eclipse-workspace\\file-sharing\\src\\main\\webapp\\resources\\files\\";
 		
 		int folderid = (Integer) request.getSession().getAttribute("folderid");
 		int userid = (Integer) request.getSession().getAttribute("userid");
