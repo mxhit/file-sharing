@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>File Share</title>
+		<meta charset="ISO-8859-1">
+		<title>Shared With Me
+		</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
         <link rel="icon" type="image/png" href="resources/images/favicon.ico"/>
@@ -30,31 +30,8 @@
         <link rel="stylesheet" type="text/css" href="resources/css/util.css">
     <!--===============================================================================================-->
 	</head>
-	<body style="background-color: white;">
+	<body>
 		<%@ include file="header.jsp" %>
-	
-		<!-- file upload button -->
-		<button type="button" style="float: right; padding: 5px;" onclick="fileUploadModal()">
-			<img src="resources/images/icons/add-file.svg"
-				class="file-upload-icon">
-		</button>
-		
-		<!-- file upload modal -->
-		<div id="fileUploadModal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-	
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-body">
-						<form action="./fileupload" method="POST" enctype="multipart/form-data">
-							<input type="file" name="file" class="file" id="file">
-							<button type="button" class="upload-file-btn" onclick="uploadFile()">Upload</button>
-						</form>
-					</div>
-				</div>
-	
-			</div>
-		</div>
 		
 		<!-- rename file modal -->
 		<div id="renameFileModal" class="modal fade" role="dialog">
@@ -123,28 +100,28 @@
 		<!-- grid -->
 		<table class="list-view">
 			<tr>
-				<th id="file-col">Your Files</th>
+				<th id="shared-file-col">Shared Files</th>
 				<th>Last Modified</th>
 				<th>Actions</th>
 			</tr>
 			
-			<c:forEach var="j" items="${files}">
+			<c:forEach var="l" items="${files}">
 				<tr>
 					<!-- file -->
-					<td id="file-col">
-						<img src="resources/images/icons/${j.getIcon()}" class="file-icon" id="file-icon" style="margin: 0px 10px">
-						<a href="resources/files/${j.getFilename()}" target="_blank" rel="noopener noreferrer">${j.getFile()}</a>
+					<td id="shared-file-col">
+						<img src="resources/images/icons/${l.getIcon()}" class="file-icon" id="file-icon" style="margin: 0px 10px">
+						<a href="resources/files/${l.getFilename()}" target="_blank" rel="noopener noreferrer">${l.getFile()}</a>
 					</td>
 					
 					<!-- last modified date -->
-					<td>${j.getLastmodified()}</td>
+					<td>${l.getLastmodified()}</td>
 					
 					<!-- actions -->
 					<td>
-						<a onclick="renameFileModal(${j.getFileid()})" class="rename"><img src="resources/images/icons/rename.svg" class="rename-icon"></a>
-						<a onclick="deleteFileModal(${j.getFileid()})" class="delete"><img src="resources/images/icons/delete.svg" class="delete-icon"></a>
-			 			<a href="" class="download" download="${j.getFilename()}"> <img src="resources/images/icons/download.svg" class="download-icon"></a>
-		 				<a onclick="shareFileModal(${j.getFileid()})" class="share"><img src="resources/images/icons/share.svg" class="share-icon"></a>
+						<a onclick="renameFileModal(${l.getFileid()})" class="rename"><img src="resources/images/icons/rename.svg" class="rename-icon"></a>
+						<a onclick="deleteFileModal(${l.getFileid()})" class="delete"><img src="resources/images/icons/delete.svg" class="delete-icon"></a>
+			 			<a href="" class="download" download="${l.getFilename()}"> <img src="resources/images/icons/download.svg" class="download-icon"></a>
+		 				<a onclick="shareFileModal(${l.getFileid()})" class="share"><img src="resources/images/icons/share.svg" class="share-icon"></a>
 					</td>
 				</tr>			
 			</c:forEach>
@@ -168,6 +145,6 @@
         <!--===============================================================================================-->
             <script type="text/javascript" src="https://kit.fontawesome.com/c19e7ec70a.js"></script>
         <!--===============================================================================================-->
-        	<script type="text/javascript" src="resources/js/main.js"></script>
+       		<script type="text/javascript" src="resources/js/main.js"></script>
 	</body>
 </html>

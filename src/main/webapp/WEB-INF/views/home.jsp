@@ -40,6 +40,9 @@
 				class="add-folder-icon">
 		</button>
 		
+		<!-- shared with me folder -->
+		<a><img src="resources/images/icons/folder-10.svg"></a>
+		
 		<!-- modal -->
 		<div id="addFolderModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">

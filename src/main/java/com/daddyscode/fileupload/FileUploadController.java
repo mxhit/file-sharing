@@ -128,6 +128,11 @@ public class FileUploadController {
 		return new ModelAndView("folder");
 	}
 	
+	@RequestMapping("/shared")
+	public ModelAndView shared() {
+		return new ModelAndView("shared");
+	}
+	
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request) {
 		request.getSession().setAttribute("user", null);
