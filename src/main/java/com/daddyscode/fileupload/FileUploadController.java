@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.daddyscode.dao.FileSharingDao;
 import com.daddyscode.dto.Files;
 import com.daddyscode.dto.Folder;
+import com.daddyscode.dto.Shared;
 import com.daddyscode.dto.Users;
 
 @Controller
@@ -129,7 +130,22 @@ public class FileUploadController {
 	}
 	
 	@RequestMapping("/shared")
-	public ModelAndView shared() {
+	public ModelAndView shared(HttpServletRequest request) {
+		int folderid = Integer.parseInt(request.getParameter("folderid"));
+		int userid = (Integer) request.getSession().getAttribute("userid");
+		request.getSession().setAttribute("folderid", folderid);
+		
+		ArrayList<Shared> shared;
+		
+		FileSharingDao fileShare = new FileSharingDao();
+		try {
+			shared = fileShare.getSharedFiles(userid);
+			
+			request.getSession().setAttribute("shared", shared);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return new ModelAndView("shared");
 	}
 	
@@ -252,7 +268,7 @@ public class FileUploadController {
 	}
 	
 	@RequestMapping(value = "sharefile", method = RequestMethod.POST)
-	public ModelAndView shareFile(HttpServletRequest request, @RequestParam("sharedusername") String sharedusername) {
+	public ModelAndView shareFile(HttpServletRequest request, @RequestParam("sharedusername") String sharedusername, @RequestParam("permission") String permission) {
 		int folderid = 0;
 		
 		int fileid = Integer.parseInt(request.getParameter("sharefileid"));
@@ -263,7 +279,7 @@ public class FileUploadController {
 		
 		FileSharingDao fileShare = new FileSharingDao();
 		try {
-			fileShare.shareFile(fileid, sharedusername);
+			fileShare.shareFile(fileid, sharedusername, permission);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

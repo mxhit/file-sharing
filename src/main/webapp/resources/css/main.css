@@ -848,7 +848,7 @@ iframe {
 
 .file-icon, .delete-icon, .download-icon, .rename-icon,
 	.file-upload-icon, .add-folder-icon, .rename-folder-icon,
-	.delete-folder-icon, .share-icon {
+	.delete-folder-icon, .share-icon, .shared-with-me {
 	width: 24px;
 	height: 24px;
 }

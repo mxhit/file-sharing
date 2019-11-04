@@ -3,7 +3,7 @@ package com.daddyscode.dto;
 public class Shared {
 	int id;
 	int fileid;
-	int sharedwith;
+	String sharedwith;
 	
 	public int getId() {
 		return id;
@@ -17,10 +17,11 @@ public class Shared {
 	public void setFileid(int fileid) {
 		this.fileid = fileid;
 	}
-	public int getSharedwith() {
+	public String getSharedwith() {
 		return sharedwith;
 	}
-	public void setSharedwith(int sharedwith) {
+	public void setSharedwith(String sharedwith) {
 		this.sharedwith = sharedwith;
 	}
+	
 }

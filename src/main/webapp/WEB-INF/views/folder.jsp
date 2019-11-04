@@ -110,6 +110,11 @@
 									<option value="${k.getFullname()}">${k.getFullname()}</option>
 								</c:forEach>
 							</datalist>
+							<select class="permission" name="permission">
+								<option value="" disabled="disabled" selected="selected">Permission</option>
+								<option value="view">View</option>
+								<option value="edit">Edit</option>
+							</select>
 
 							<input type="hidden" name="sharefileid" id="sharefileid">
 							<button type="button" class="share-file-btn" onclick="shareFile()">Share</button>

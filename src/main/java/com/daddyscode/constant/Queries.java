@@ -11,12 +11,16 @@ public interface Queries {
 	static final String DOWNLOAD_FILE_QUERY = "SELECT filename FROM FSfile WHERE id = ?";
 	static final String GET_USER_QUERY = "SELECT id FROM FSuser WHERE username = ?";
 	static final String GET_USERS_QUERY = "SELECT * FROM FSuser";
+	static final String GET_USER_ID_QUERY = "SELECT fullname FROM FSuser WHERE id = ?";
+	static final String GET_SHARED_FILES_QUERY = "SELECT fileid FROM FSshare WHERE sharedwith = ?";
+	static final String GET_SHARED_FILE_QUERY = "SELECT * FROM FSfile WHERE id = ?";
 	
 	// ****************************** INSERT ******************************	
 	static final String ADD_USER_QUERY = "INSERT INTO FSuser (username, password, fullname, email) VALUES (?, ?, ?, ?)";
 	static final String ADD_FOLDER_QUERY = "INSERT INTO FSfolder (foldername, createddate, folder, userid) VALUES (?, ?, ?, ?)";
 	static final String ADD_FILES_QUERY = "INSERT INTO FSfile (folderid, filename, createddate, file, lastmodified, userid) VALUES (?, ?, ?, ?, ?, ?)";
-	static final String ADD_SHARE_INFO_QUERY = "INSERT INTO FSshare (fileid, sharedwith) VALUES (?, ?)";
+	static final String ADD_SHARE_INFO_QUERY = "INSERT INTO FSshare (fileid, sharedwith, permission) VALUES (?, ?, ?)";
+	static final String ADD_SHARED_FILES_QUERY = "INSERT INTO FSsharedWithMe (userid, folderid, filename, createddate, file, lastmodified, permission) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 	// ****************************** UPDATE ******************************	
 	static final String RENAME_FOLDER_QUERY = "UPDATE FSfolder SET folder = ? WHERE id = ?";

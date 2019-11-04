@@ -41,7 +41,7 @@
 		</button>
 		
 		<!-- shared with me folder -->
-		<a><img src="resources/images/icons/folder-10.svg"></a>
+		<a href="./shared" style="float: right; padding: 5px;"><img src="resources/images/icons/shared-folder.svg" class="shared-with-me"></a>
 		
 		<!-- modal -->
 		<div id="addFolderModal" class="modal fade" role="dialog">
