@@ -135,11 +135,13 @@ public class FileUploadController {
 		int userid = (Integer) request.getSession().getAttribute("userid");
 		request.getSession().setAttribute("folderid", folderid);
 		
+		String permission = (String) request.getSession().getAttribute("permission");
+		
 		ArrayList<Shared> shared;
 		
 		FileSharingDao fileShare = new FileSharingDao();
 		try {
-			shared = fileShare.getSharedFiles(userid);
+			shared = fileShare.getSharedFiles(userid, permission);
 			
 			request.getSession().setAttribute("shared", shared);
 		} catch (Exception e) {
@@ -276,6 +278,7 @@ public class FileUploadController {
 		folderid = (Integer) request.getSession().getAttribute("folderid");
 		
 		System.out.println("shareduserid: " + sharedusername);
+		request.getSession().setAttribute("permission", permission);
 		
 		FileSharingDao fileShare = new FileSharingDao();
 		try {

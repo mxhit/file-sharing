@@ -270,7 +270,7 @@ public class FileSharingDao extends CloseConnection implements Queries {
 	}
 
 	// ****************************** SHARED ******************************
-	public ArrayList<Shared> getSharedFiles(int userid) throws ClassNotFoundException, SQLException {
+	public ArrayList<Shared> getSharedFiles(int userid, String permission) throws ClassNotFoundException, SQLException {
 		final String folderid = "shared";
 		
 		ArrayList<Shared> sharedFilesList = new ArrayList<Shared>();
@@ -293,7 +293,7 @@ public class FileSharingDao extends CloseConnection implements Queries {
 		preparedStatement2.setString(1, fullName);
 		ResultSet resultSet2 = preparedStatement2.executeQuery();
 		
-		int sharedfileid;
+		int sharedfileid = 0;
 		
 		if (resultSet2.next()) {
 			sharedfileid = resultSet2.getInt("fileid");
@@ -301,7 +301,27 @@ public class FileSharingDao extends CloseConnection implements Queries {
 
 		close(preparedStatement2, resultSet2);
 		
-		PreparedStatement preparedStatement3 = DatabaseConnection.getDatabase().getConnection().prepareStatement(ADD_SHARED_FILES_QUERY);
+		PreparedStatement preparedStatement3 = DatabaseConnection.getDatabase().getConnection().prepareStatement(GET_SHARED_FILE_QUERY);
+		preparedStatement3.setInt(1, sharedfileid);
+		ResultSet resultSet3 = preparedStatement3.executeQuery();
+		
+		if (resultSet3.next()) {
+			PreparedStatement preparedStatement4 = DatabaseConnection.getDatabase().getConnection().prepareStatement(ADD_SHARED_FILES_QUERY);
+			preparedStatement4.setInt(1, resultSet3.getInt("userid"));
+			preparedStatement4.setString(2, folderid);
+			preparedStatement4.setString(3, resultSet3.getString("filename"));
+			preparedStatement4.setString(4, resultSet3.getString("createddate"));
+			preparedStatement4.setString(5, resultSet3.getString("file"));
+			preparedStatement4.setString(6, resultSet3.getString("lastmodified"));
+			preparedStatement4.setString(7, permission);
+			preparedStatement4.executeUpdate();
+			
+			close(preparedStatement4);
+		}
+		
+		close(preparedStatement3, resultSet3);
+		
+		// fetch data from db
 
 		return sharedFilesList;
 	}
