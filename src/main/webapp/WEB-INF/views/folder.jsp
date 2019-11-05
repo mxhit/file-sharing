@@ -148,7 +148,7 @@
 					<td>
 						<a onclick="renameFileModal(${j.getFileid()})" class="rename"><img src="resources/images/icons/rename.svg" class="rename-icon"></a>
 						<a onclick="deleteFileModal(${j.getFileid()})" class="delete"><img src="resources/images/icons/delete.svg" class="delete-icon"></a>
-			 			<a href="" class="download" download="${j.getFilename()}"> <img src="resources/images/icons/download.svg" class="download-icon"></a>
+			 			<a href="" download="${j.getFilename()}" class="download"> <img src="resources/images/icons/download.svg" class="download-icon"></a>
 		 				<a onclick="shareFileModal(${j.getFileid()})" class="share"><img src="resources/images/icons/share.svg" class="share-icon"></a>
 					</td>
 				</tr>			

@@ -12,7 +12,7 @@ import java.util.Date;
 import com.daddyscode.constant.Queries;
 import com.daddyscode.dto.Files;
 import com.daddyscode.dto.Folder;
-import com.daddyscode.dto.Shared;
+import com.daddyscode.dto.SharedWithMe;
 import com.daddyscode.dto.Users;
 import com.daddyscode.utility.DatabaseConnection;
 import com.daddyscode.utility.CloseConnection;
@@ -50,9 +50,6 @@ public class FileSharingDao extends CloseConnection implements Queries {
 		preparedStatement.executeUpdate();
 
 		close(preparedStatement);
-
-		System.out.println("registerUser end");
-
 	}
 
 	public int getUser(String username) throws ClassNotFoundException, SQLException {
@@ -270,10 +267,10 @@ public class FileSharingDao extends CloseConnection implements Queries {
 	}
 
 	// ****************************** SHARED ******************************
-	public ArrayList<Shared> getSharedFiles(int userid, String permission) throws ClassNotFoundException, SQLException {
+	public ArrayList<SharedWithMe> getSharedFiles(int userid) throws ClassNotFoundException, SQLException {
 		final String folderid = "shared";
 		
-		ArrayList<Shared> sharedFilesList = new ArrayList<Shared>();
+		ArrayList<SharedWithMe> sharedFilesList = new ArrayList<SharedWithMe>();
 
 		String fullName = null;
 
@@ -282,11 +279,11 @@ public class FileSharingDao extends CloseConnection implements Queries {
 		preparedStatement.setInt(1, userid);
 		ResultSet resultSet = preparedStatement.executeQuery();
 
-		close(preparedStatement, resultSet);
-
 		if (resultSet.next()) {
 			fullName = resultSet.getString("fullname");
 		}
+		
+		close(preparedStatement, resultSet);
 
 		PreparedStatement preparedStatement2 = DatabaseConnection.getDatabase().getConnection()
 				.prepareStatement(GET_SHARED_FILES_QUERY);
@@ -294,9 +291,11 @@ public class FileSharingDao extends CloseConnection implements Queries {
 		ResultSet resultSet2 = preparedStatement2.executeQuery();
 		
 		int sharedfileid = 0;
+		String permission = null;
 		
 		if (resultSet2.next()) {
 			sharedfileid = resultSet2.getInt("fileid");
+			permission = resultSet2.getString("permission");
 		}
 
 		close(preparedStatement2, resultSet2);
@@ -306,8 +305,9 @@ public class FileSharingDao extends CloseConnection implements Queries {
 		ResultSet resultSet3 = preparedStatement3.executeQuery();
 		
 		if (resultSet3.next()) {
+			System.out.println("adding files in FSsharedWithMe: " + permission);
 			PreparedStatement preparedStatement4 = DatabaseConnection.getDatabase().getConnection().prepareStatement(ADD_SHARED_FILES_QUERY);
-			preparedStatement4.setInt(1, resultSet3.getInt("userid"));
+			preparedStatement4.setInt(1, userid);
 			preparedStatement4.setString(2, folderid);
 			preparedStatement4.setString(3, resultSet3.getString("filename"));
 			preparedStatement4.setString(4, resultSet3.getString("createddate"));
@@ -322,7 +322,25 @@ public class FileSharingDao extends CloseConnection implements Queries {
 		close(preparedStatement3, resultSet3);
 		
 		// fetch data from db
+		PreparedStatement preparedStatement5 = DatabaseConnection.getDatabase().getConnection().prepareStatement(GET_SHARED_FILE_DATABASE_QUERY);
+		preparedStatement5.setInt(1, userid);
+		ResultSet resultSet4 = preparedStatement5.executeQuery();
 
+		while (resultSet4.next()) {
+			SharedWithMe sharedWithMe = new SharedWithMe();
+			sharedWithMe.setUserid(resultSet4.getInt("userid"));
+			sharedWithMe.setFolderid(resultSet4.getString("folderid"));
+			sharedWithMe.setFilename(resultSet4.getString("filename"));
+			sharedWithMe.setCreateddate(resultSet4.getString("createddate"));
+			sharedWithMe.setFile(resultSet4.getString("file"));
+			sharedWithMe.setLastmodified(resultSet4.getString("lastmodified"));
+			sharedWithMe.setPermission(resultSet4.getString("permission"));
+			
+			sharedFilesList.add(sharedWithMe);
+		}
+		
+		close(preparedStatement5, resultSet4);
+		
 		return sharedFilesList;
 	}
 

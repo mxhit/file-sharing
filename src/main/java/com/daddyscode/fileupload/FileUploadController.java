@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.daddyscode.dao.FileSharingDao;
 import com.daddyscode.dto.Files;
 import com.daddyscode.dto.Folder;
-import com.daddyscode.dto.Shared;
+import com.daddyscode.dto.SharedWithMe;
 import com.daddyscode.dto.Users;
 
 @Controller
@@ -131,17 +131,18 @@ public class FileUploadController {
 	
 	@RequestMapping("/shared")
 	public ModelAndView shared(HttpServletRequest request) {
-		int folderid = Integer.parseInt(request.getParameter("folderid"));
+//		int folderid = Integer.parseInt(request.getParameter("folderid"));
 		int userid = (Integer) request.getSession().getAttribute("userid");
-		request.getSession().setAttribute("folderid", folderid);
+//		request.getSession().setAttribute("folderid", folderid);
 		
-		String permission = (String) request.getSession().getAttribute("permission");
+//		String permission = (String) request.getSession().getAttribute("permission");
+//		System.out.println("Permission: " + permission);
 		
-		ArrayList<Shared> shared;
+		ArrayList<SharedWithMe> shared;
 		
 		FileSharingDao fileShare = new FileSharingDao();
 		try {
-			shared = fileShare.getSharedFiles(userid, permission);
+			shared = fileShare.getSharedFiles(userid);
 			
 			request.getSession().setAttribute("shared", shared);
 		} catch (Exception e) {
@@ -213,7 +214,7 @@ public class FileUploadController {
 	
 	@RequestMapping(value = "/fileupload", method = RequestMethod.POST)
 	public ModelAndView fileUpload(HttpServletRequest request, @RequestParam("file") MultipartFile file) {
-		final String UPLOAD_DIRECTORY = "E:\\Java\\eclipse-workspace\\file-sharing\\src\\main\\webapp\\resources\\files\\";
+		final String UPLOAD_DIRECTORY = "D:\\Java\\eclipse-workspace\\file-share\\src\\main\\webapp\\resources\\files\\";
 		
 		int folderid = (Integer) request.getSession().getAttribute("folderid");
 		int userid = (Integer) request.getSession().getAttribute("userid");
@@ -278,7 +279,8 @@ public class FileUploadController {
 		folderid = (Integer) request.getSession().getAttribute("folderid");
 		
 		System.out.println("shareduserid: " + sharedusername);
-		request.getSession().setAttribute("permission", permission);
+		System.out.println("Permission is " + permission);
+//		request.getSession().setAttribute("permission", permission);
 		
 		FileSharingDao fileShare = new FileSharingDao();
 		try {

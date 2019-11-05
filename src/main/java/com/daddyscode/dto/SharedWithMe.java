@@ -1,7 +1,6 @@
 package com.daddyscode.dto;
 
 public class SharedWithMe {
-	int id;
 	int userid;
 	String folderid;
 	String filename;
@@ -10,12 +9,6 @@ public class SharedWithMe {
 	String lastmodified;
 	String permission;
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public int getUserid() {
 		return userid;
 	}

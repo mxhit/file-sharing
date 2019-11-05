@@ -12,8 +12,9 @@ public interface Queries {
 	static final String GET_USER_QUERY = "SELECT id FROM FSuser WHERE username = ?";
 	static final String GET_USERS_QUERY = "SELECT * FROM FSuser";
 	static final String GET_USER_ID_QUERY = "SELECT fullname FROM FSuser WHERE id = ?";
-	static final String GET_SHARED_FILES_QUERY = "SELECT fileid FROM FSshare WHERE sharedwith = ?";
+	static final String GET_SHARED_FILES_QUERY = "SELECT fileid, permission FROM FSshare WHERE sharedwith = ?";
 	static final String GET_SHARED_FILE_QUERY = "SELECT * FROM FSfile WHERE id = ?";
+	static final String GET_SHARED_FILE_DATABASE_QUERY = "SELECT * FROM FSsharedWithMe WHERE userid = ?";
 	
 	// ****************************** INSERT ******************************	
 	static final String ADD_USER_QUERY = "INSERT INTO FSuser (username, password, fullname, email) VALUES (?, ?, ?, ?)";

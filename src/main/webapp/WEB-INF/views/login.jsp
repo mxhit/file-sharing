@@ -35,7 +35,7 @@
 				<div class="wrap-login100 p-t-30 p-b-50">
 				
 					<div class="login100-form-title p-b-41">
-						<img src="resources/images/logo-fixed.png"><br>
+<!-- 						<img src="resources/images/logo-fixed.png"><br> -->
 						<a href="./register" class="register-link">Don't have an account? Register here</a>			
 					</div>
 					
