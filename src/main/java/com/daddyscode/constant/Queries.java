@@ -21,7 +21,7 @@ public interface Queries {
 	static final String ADD_FOLDER_QUERY = "INSERT INTO FSfolder (foldername, createddate, folder, userid) VALUES (?, ?, ?, ?)";
 	static final String ADD_FILES_QUERY = "INSERT INTO FSfile (folderid, filename, createddate, file, lastmodified, userid) VALUES (?, ?, ?, ?, ?, ?)";
 	static final String ADD_SHARE_INFO_QUERY = "INSERT INTO FSshare (fileid, sharedwith, permission) VALUES (?, ?, ?)";
-	static final String ADD_SHARED_FILES_QUERY = "INSERT INTO FSsharedWithMe (userid, folderid, filename, createddate, file, lastmodified, permission) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	static final String ADD_SHARED_FILES_QUERY = "INSERT INTO FSsharedWithMe (userid, fileid, folderid, filename, createddate, file, lastmodified, permission) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 	// ****************************** UPDATE ******************************	
 	static final String RENAME_FOLDER_QUERY = "UPDATE FSfolder SET folder = ? WHERE id = ?";

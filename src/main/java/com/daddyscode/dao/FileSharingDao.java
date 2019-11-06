@@ -300,20 +300,23 @@ public class FileSharingDao extends CloseConnection implements Queries {
 
 		close(preparedStatement2, resultSet2);
 		
-		PreparedStatement preparedStatement3 = DatabaseConnection.getDatabase().getConnection().prepareStatement(GET_SHARED_FILE_QUERY);
+		PreparedStatement preparedStatement3 = DatabaseConnection.getDatabase().getConnection()
+				.prepareStatement(GET_SHARED_FILE_QUERY);
 		preparedStatement3.setInt(1, sharedfileid);
 		ResultSet resultSet3 = preparedStatement3.executeQuery();
 		
 		if (resultSet3.next()) {
 			System.out.println("adding files in FSsharedWithMe: " + permission);
-			PreparedStatement preparedStatement4 = DatabaseConnection.getDatabase().getConnection().prepareStatement(ADD_SHARED_FILES_QUERY);
+			PreparedStatement preparedStatement4 = DatabaseConnection.getDatabase().getConnection()
+					.prepareStatement(ADD_SHARED_FILES_QUERY);
 			preparedStatement4.setInt(1, userid);
-			preparedStatement4.setString(2, folderid);
-			preparedStatement4.setString(3, resultSet3.getString("filename"));
-			preparedStatement4.setString(4, resultSet3.getString("createddate"));
-			preparedStatement4.setString(5, resultSet3.getString("file"));
-			preparedStatement4.setString(6, resultSet3.getString("lastmodified"));
-			preparedStatement4.setString(7, permission);
+			preparedStatement4.setInt(2, resultSet3.getInt("id"));
+			preparedStatement4.setString(3, folderid);
+			preparedStatement4.setString(4, resultSet3.getString("filename"));
+			preparedStatement4.setString(5, resultSet3.getString("createddate"));
+			preparedStatement4.setString(6, resultSet3.getString("file"));
+			preparedStatement4.setString(7, resultSet3.getString("lastmodified"));
+			preparedStatement4.setString(8, permission);
 			preparedStatement4.executeUpdate();
 			
 			close(preparedStatement4);
@@ -322,19 +325,22 @@ public class FileSharingDao extends CloseConnection implements Queries {
 		close(preparedStatement3, resultSet3);
 		
 		// fetch data from db
-		PreparedStatement preparedStatement5 = DatabaseConnection.getDatabase().getConnection().prepareStatement(GET_SHARED_FILE_DATABASE_QUERY);
+		PreparedStatement preparedStatement5 = DatabaseConnection.getDatabase().getConnection()
+				.prepareStatement(GET_SHARED_FILE_DATABASE_QUERY);
 		preparedStatement5.setInt(1, userid);
 		ResultSet resultSet4 = preparedStatement5.executeQuery();
 
 		while (resultSet4.next()) {
 			SharedWithMe sharedWithMe = new SharedWithMe();
+			sharedWithMe.setFileid(resultSet4.getInt("fileid"));
 			sharedWithMe.setUserid(resultSet4.getInt("userid"));
 			sharedWithMe.setFolderid(resultSet4.getString("folderid"));
 			sharedWithMe.setFilename(resultSet4.getString("filename"));
-			sharedWithMe.setCreateddate(resultSet4.getString("createddate"));
+			sharedWithMe.setCreateddate(convertDate(resultSet4.getString("createddate")));
 			sharedWithMe.setFile(resultSet4.getString("file"));
-			sharedWithMe.setLastmodified(resultSet4.getString("lastmodified"));
+			sharedWithMe.setLastmodified(convertDate(resultSet4.getString("lastmodified")));
 			sharedWithMe.setPermission(resultSet4.getString("permission"));
+			sharedWithMe.setIcon(getIcon(extractExtension(resultSet4.getString("file"))));
 			
 			sharedFilesList.add(sharedWithMe);
 		}

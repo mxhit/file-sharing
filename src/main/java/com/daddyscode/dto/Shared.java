@@ -23,5 +23,4 @@ public class Shared {
 	public void setSharedwith(String sharedwith) {
 		this.sharedwith = sharedwith;
 	}
-	
 }

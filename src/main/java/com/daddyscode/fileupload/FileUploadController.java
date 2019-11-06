@@ -131,12 +131,7 @@ public class FileUploadController {
 	
 	@RequestMapping("/shared")
 	public ModelAndView shared(HttpServletRequest request) {
-//		int folderid = Integer.parseInt(request.getParameter("folderid"));
 		int userid = (Integer) request.getSession().getAttribute("userid");
-//		request.getSession().setAttribute("folderid", folderid);
-		
-//		String permission = (String) request.getSession().getAttribute("permission");
-//		System.out.println("Permission: " + permission);
 		
 		ArrayList<SharedWithMe> shared;
 		
@@ -214,7 +209,7 @@ public class FileUploadController {
 	
 	@RequestMapping(value = "/fileupload", method = RequestMethod.POST)
 	public ModelAndView fileUpload(HttpServletRequest request, @RequestParam("file") MultipartFile file) {
-		final String UPLOAD_DIRECTORY = "D:\\Java\\eclipse-workspace\\file-share\\src\\main\\webapp\\resources\\files\\";
+		final String UPLOAD_DIRECTORY = "E:\\Java\\eclipse-workspace\\file-sharing\\src\\main\\webapp\\resources\\files\\";
 		
 		int folderid = (Integer) request.getSession().getAttribute("folderid");
 		int userid = (Integer) request.getSession().getAttribute("userid");
@@ -279,8 +274,6 @@ public class FileUploadController {
 		folderid = (Integer) request.getSession().getAttribute("folderid");
 		
 		System.out.println("shareduserid: " + sharedusername);
-		System.out.println("Permission is " + permission);
-//		request.getSession().setAttribute("permission", permission);
 		
 		FileSharingDao fileShare = new FileSharingDao();
 		try {
